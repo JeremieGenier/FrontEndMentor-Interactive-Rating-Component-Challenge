@@ -4,7 +4,11 @@
     position: relative;
     .dark-card {
         padding: 1rem;
-    
+        &:not(.visible){
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
         & .card-content {
             max-width: 430px;
             background-color: $dark-blue;
@@ -46,14 +50,7 @@
                 font-size: 15px;
             }
         }
-    
         &.rating {
-
-            &:not(.visible){
-                pointer-events: none;
-                opacity: 0;
-                transition: opacity 0.5s;
-            }
             .card-content {
                 .text {
                     // Skip the need of media query
@@ -113,10 +110,7 @@
                 }
             }
         }
-    
         &.thanks {
-            opacity: 0;
-            pointer-events: none;
             position: absolute;
             inset: 0;
             &.visible {
@@ -124,7 +118,6 @@
                 opacity: 1;
                 transition: opacity 0.5s;
             }
-
             .card-content {
                 padding: 3em;
                 text-align: center;

@@ -43,6 +43,10 @@ footer {
   position: relative; }
   .rating-component .dark-card {
     padding: 1rem; }
+    .rating-component .dark-card:not(.visible) {
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.5s; }
     .rating-component .dark-card .card-content {
       max-width: 430px;
       background-color: #171e28;
@@ -74,10 +78,6 @@ footer {
         color: #7c8898;
         line-height: 1.5;
         font-size: 15px; }
-    .rating-component .dark-card.rating:not(.visible) {
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.5s; }
     .rating-component .dark-card.rating .card-content .text {
       padding-right: clamp(0px, calc(5vw - 15px), 2rem); }
     .rating-component .dark-card.rating .ratings-list {
@@ -123,8 +123,6 @@ footer {
         background-color: white;
         cursor: not-allowed; }
     .rating-component .dark-card.thanks {
-      opacity: 0;
-      pointer-events: none;
       position: absolute;
       inset: 0; }
       .rating-component .dark-card.thanks.visible {
