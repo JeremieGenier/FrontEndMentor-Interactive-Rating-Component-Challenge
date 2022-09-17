@@ -1,0 +1,43 @@
+// Bootstrap breakpoints
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+// Source of this media query method : https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2
+// Media query mixins
+@mixin query-sm {
+    @media (min-width: #{$screen-sm}) {
+        @content;
+    }
+}
+@mixin query-md {
+    @media (min-width: #{$screen-md}) {
+        @content;
+    }
+}
+@mixin query-lg {
+    @media (min-width: #{$screen-lg}) {
+        @content;
+    }
+}
+@mixin query-xl {
+    @media (min-width: #{$screen-xl}) {
+        @content;
+    }
+}
+// How to use :
+// @include query-sm {
+//     // CSS propeties here
+// }
+
+@mixin query-custom($screen) {
+    @media (min-width: #{$screen}) {
+        @content;
+    }  
+}
+// How to use :
+// Takes a parameter "$screen"
+// @include query-custom(1400) {
+//     // CSS propeties here
+// }

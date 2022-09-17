@@ -1,6 +1,11 @@
 @import 'partials/variables';
+@import 'partials/media-query';
+
 /* Global css effects */
 html {
+    // 400 and 700 weight from DD (Design document)
+    font-family: $overpass;
+    font-weight: 400;
     font-size: 16px;
 }
 
@@ -13,6 +18,17 @@ a, a:link, a:visited, a:hover, a:active {
     color: inherit;
 }
 
+// Removes default styling of buttons
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 // Parameters to allow the footer to always be at least at the bottom of the viewport
 // Position "absolute" to avoid effect of margins of childs on the body
 body {
@@ -21,6 +37,8 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100%;
+
+    background-color: $very-dark-blue;
 }
 
 footer {
@@ -35,3 +53,5 @@ footer {
         color: $orange;
     }
 }
+
+@import 'partials/rating-component';

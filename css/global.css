@@ -1,5 +1,7 @@
 /* Global css effects */
 html {
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
   font-size: 16px; }
 
 *, *::after, *::before {
@@ -9,12 +11,22 @@ a, a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   color: inherit; }
 
+button, input[type="submit"], input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit; }
+
 body {
   position: absolute;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  background-color: #121417; }
 
 footer {
   margin-top: auto;
@@ -26,3 +38,112 @@ footer {
   background-color: #121417; }
   footer .attribution a {
     color: #fb7413; }
+
+.rating-component {
+  position: relative; }
+  .rating-component .dark-card {
+    padding: 1rem; }
+    .rating-component .dark-card .card-content {
+      max-width: 430px;
+      background-color: #171e28;
+      border-radius: 25px;
+      padding: 2em; }
+      .rating-component .dark-card .card-content.centered {
+        margin-left: auto;
+        margin-right: auto; }
+      .rating-component .dark-card .card-content.my-6 {
+        margin-top: 6rem;
+        margin-bottom: 6rem; }
+      .rating-component .dark-card .card-content > *:not(:first-child):not(:last-child) {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem; }
+      .rating-component .dark-card .card-content h1 {
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 700; }
+      .rating-component .dark-card .card-content .star {
+        margin-bottom: 2rem; }
+        .rating-component .dark-card .card-content .star .icon {
+          padding: 0.5rem;
+          font-size: 1.3em;
+          color: #fb7413;
+          width: fit-content;
+          border-radius: 50%;
+          background-color: #242f3a; }
+      .rating-component .dark-card .card-content .text {
+        color: #7c8898;
+        line-height: 1.5;
+        font-size: 15px; }
+    .rating-component .dark-card.rating:not(.visible) {
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.5s; }
+    .rating-component .dark-card.rating .card-content .text {
+      padding-right: clamp(0px, calc(5vw - 15px), 2rem); }
+    .rating-component .dark-card.rating .ratings-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+      .rating-component .dark-card.rating .ratings-list > li {
+        font-size: 0.8rem;
+        min-width: 3em;
+        min-height: 3em; }
+        .rating-component .dark-card.rating .ratings-list > li button {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #7c8898;
+          background-color: #242f3a;
+          border-radius: 50%;
+          transition: color 0.5s, background-color 0.5s; }
+          .rating-component .dark-card.rating .ratings-list > li button.selected {
+            color: white;
+            background-color: #7c8898; }
+          .rating-component .dark-card.rating .ratings-list > li button:hover {
+            color: white;
+            background-color: #fb7413; }
+    .rating-component .dark-card.rating .submit {
+      width: 100%;
+      padding: 1em;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-align: center;
+      background-color: #fb7413;
+      border-radius: 2rem;
+      transition: color 0.5s, background-color 0.5s; }
+      .rating-component .dark-card.rating .submit:hover {
+        color: #fb7413;
+        background-color: white; }
+      .rating-component .dark-card.rating .submit:not(.ready), .rating-component .dark-card.rating .submit:not(.ready):hover {
+        color: #7c8898;
+        background-color: white;
+        cursor: not-allowed; }
+    .rating-component .dark-card.thanks {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      inset: 0; }
+      .rating-component .dark-card.thanks.visible {
+        pointer-events: all;
+        opacity: 1;
+        transition: opacity 0.5s; }
+      .rating-component .dark-card.thanks .card-content {
+        padding: 3em;
+        text-align: center; }
+        .rating-component .dark-card.thanks .card-content .selected-rating {
+          margin-left: auto;
+          margin-right: auto;
+          width: fit-content;
+          padding: 0.5em 1em;
+          color: #fb7413;
+          background-color: #242f3a;
+          border-radius: 1rem; }
+        .rating-component .dark-card.thanks .card-content .img-thank-you {
+          min-width: 10rem; }
+  @media (min-width: 576px) {
+    .rating-component .dark-card.rating .ratings-list > li {
+      font-size: 1rem; } }
